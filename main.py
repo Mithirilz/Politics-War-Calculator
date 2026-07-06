@@ -1,12 +1,12 @@
 from math import ceil
 
 def main():
-    _desired_treasury = input("What's the amount of treasury you want to reach: ")
     _current_treasury = input("What's your current treasury: ")
+    _desired_treasury = input("What's the amount of treasury you want to reach: ")
     _netincome_treasury = input("What's your net income: ")
 
-    _desired_treasury = _desired_treasury.replace(",", "")
     _current_treasury = _current_treasury.replace(",", "")
+    _desired_treasury = _desired_treasury.replace(",", "")
     _netincome_treasury = _netincome_treasury.replace(",", "")
 
     calc_turns_for_goal_treasury(desired_treasury=float(_desired_treasury), current_treasury=float(_current_treasury), net_income=float(_netincome_treasury))
@@ -14,8 +14,8 @@ def main():
     return
 
 def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, net_income: int):
-    print(f"\nDesired treasury: RM{desired_treasury:,}")
-    print(f"Current treasury: RM{current_treasury:,}")
+    print(f"\nCurrent treasury: RM{current_treasury:,}")
+    print(f"Desired treasury: RM{desired_treasury:,}")
     print(f"Net income: RM{net_income:,}")
 
     profit_needed = desired_treasury - current_treasury
@@ -35,7 +35,7 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
     print(f"Time taken to reach desired treasury: {time_taken} hours")
 
     if time_taken >= 24:
-        print(f"It takes this many days to reach your profit: {round(time_taken/24, 1)}")
+        print(f"It takes this many days to reach your profit: {round(time_taken/24, 1)} days")
 
     return
 
