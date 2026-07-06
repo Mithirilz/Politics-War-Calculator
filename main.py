@@ -1,16 +1,16 @@
 from math import ceil
 
 def main():
-    print("What's the amount of treasury you want to reach: ")
-    _desired_treasury = input()
+    _desired_treasury = input("What's the amount of treasury you want to reach: ")
+    _current_treasury = input("What's your current treasury: ")
+    _netincome_treasury = input("What's your net income: ")
 
-    print("What's your current treasury: ")
-    _current_treasury = input()
+    _desired_treasury = _desired_treasury.replace(",", "")
+    _current_treasury = _current_treasury.replace(",", "")
+    _netincome_treasury = _netincome_treasury.replace(",", "")
 
-    print("What's your net income: ")
-    _netincome_treasury = input()
+    calc_turns_for_goal_treasury(desired_treasury=float(_desired_treasury), current_treasury=float(_current_treasury), net_income=float(_netincome_treasury))
 
-    calc_turns_for_goal_treasury(desired_treasury=_desired_treasury, current_treasury=_current_treasury, net_income=_netincome_treasury)
     return
 
 def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, net_income: int):
