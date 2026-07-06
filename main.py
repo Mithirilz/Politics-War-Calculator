@@ -29,9 +29,13 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
         return  
     
     turns_needed = ceil((profit_needed / net_income))
+    time_taken = turns_needed*2
 
     print(f"The amount of turns needed to reach desired treasury: {int(turns_needed)}")
-    print(f"Time taken to reach desired treasury: {int(turns_needed*2)} hours")
+    print(f"Time taken to reach desired treasury: {time_taken} hours")
+
+    if time_taken >= 24:
+        print(f"It takes this many days to reach your profit: {round(time_taken/24, 1)}")
 
     return
 
