@@ -1,7 +1,16 @@
 from math import ceil
 
 def main():
-    calc_turns_for_goal_treasury(desired_treasury=2000000, current_treasury=1327257.58, net_income=109257.41) 
+    print("What's the amount of treasury you want to reach: ")
+    _desired_treasury = input()
+
+    print("What's your current treasury: ")
+    _current_treasury = input()
+
+    print("What's your net income: ")
+    _netincome_treasury = input()
+
+    calc_turns_for_goal_treasury(desired_treasury=_desired_treasury, current_treasury=_current_treasury, net_income=_netincome_treasury)
     return
 
 def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, net_income: int):
