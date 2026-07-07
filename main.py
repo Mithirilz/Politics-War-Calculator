@@ -20,7 +20,7 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
 
     profit_needed = desired_treasury - current_treasury
 
-    if (profit_needed) > 0 or (desired_treasury < current_treasury):
+    if (profit_needed) > 0 or (desired_treasury > current_treasury):
         rounded_number = round(profit_needed, 2) 
         print(f"Financial gap between the treasuries: RM{rounded_number:,}")
 
