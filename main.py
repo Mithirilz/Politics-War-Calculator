@@ -2,7 +2,11 @@ from math import ceil
 
 def main():
     try:
-        open("cache.txt", "r")
+        with open("cache.txt", "r") as cache:
+            for lines in cache.readlines():
+                print(lines, end="")
+
+        return
 
     except FileNotFoundError:
         _current_treasury = input("What's your current treasury: ")
