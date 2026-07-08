@@ -1,9 +1,15 @@
 from math import ceil
 
 def main():
-    _current_treasury = input("What's your current treasury: ")
-    _desired_treasury = input("What's the amount of treasury you want to reach: ")
-    _netincome_treasury = input("What's your net income: ")
+    try:
+        open("cache.txt", "r")
+
+    except FileNotFoundError:
+        _current_treasury = input("What's your current treasury: ")
+        _desired_treasury = input("What's the amount of treasury you want to reach: ")
+        _netincome_treasury = input("What's your net income: ")
+
+        store_cache(_current_treasury, _desired_treasury, _netincome_treasury)
 
     _current_treasury = _current_treasury.replace(",", "")
     _desired_treasury = _desired_treasury.replace(",", "")
@@ -39,13 +45,8 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
 
     return
 
-def get_or_store_cache(_net_income, _current_treasury, _desired_treasury):
+def store_cache(_current_treasury, _desired_treasury, _net_income):
     with open("cache.txt", "w") as cache:
-        cache_data = cache.read()
-
-        if not cache_data:
-            return cache_data
-
         cache.write(f"net_income={_net_income}\n" \
                     f"current_treasury={_current_treasury}\n" \
                     f"desired_treasury={_desired_treasury}")
