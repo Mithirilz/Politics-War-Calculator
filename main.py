@@ -40,7 +40,12 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
     return
 
 def store_cache():
-    
+    with open("cache.txt", "w") as cache:
+        cache_data = cache.read()
+
+        if cache_data == None:
+            print("No previous cached data.")        
+
     return
 
 main()
