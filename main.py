@@ -39,4 +39,8 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
 
     return
 
+def store_cache():
+    
+    return
+
 main()
