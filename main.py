@@ -64,6 +64,9 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
 
     return
 
+def get_user_inputs():
+    pass 
+
 def store_cache(_current_treasury, _desired_treasury, _net_income):
     with open("cache.txt", "w") as cache:
         cache.write(f"net_income={_net_income}\n" \
