@@ -22,6 +22,7 @@ def main():
             
             if is_keep_cache.lower() == "n":
                 _current_treasury, _desired_treasury, _netincome_treasury = get_user_inputs()
+                store_cache(_current_treasury, _desired_treasury, _netincome_treasury)
 
     except FileNotFoundError:
         _current_treasury, _desired_treasury, _netincome_treasury = get_user_inputs()
