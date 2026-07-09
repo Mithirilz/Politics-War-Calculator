@@ -3,10 +3,25 @@ from math import ceil
 def main():
     try:
         with open("cache.txt", "r") as cache:
-            for lines in cache.readlines():
-                print(lines, end="")
+            cache_data = {}
 
-        return
+            for lines in cache.readlines():
+                index, content = lines.split("=")
+                cache_data[index] = content.replace("\n", "")
+
+            is_keep_cache = input("These were the inputs you placed in last session, would you like to keep them?\n" \
+                f"Current Treasury: {cache_data["current_treasury"]}\n" \
+                f"Desired Treasury: {cache_data["desired_treasury"]}\n" \
+                f"Net income: {cache_data["net_income"]}\n\n"
+                "y/n\n")
+            
+            if is_keep_cache.lower() == "y":
+                _current_treasury = cache_data["current_treasury"]
+                _desired_treasury = cache_data["desired_treasury"]
+                _netincome_treasury = cache_data["net_income"]
+            
+            if is_keep_cache.lower() == "n":
+                return
 
     except FileNotFoundError:
         _current_treasury = input("What's your current treasury: ")
