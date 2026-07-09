@@ -12,7 +12,7 @@ def main():
             is_keep_cache = input("These were the inputs you placed in last session, would you like to keep them?\n" \
                 f"Current Treasury: {cache_data["current_treasury"]}\n" \
                 f"Desired Treasury: {cache_data["desired_treasury"]}\n" \
-                f"Net income: {cache_data["net_income"]}\n\n"
+                f"Net income: {cache_data["net_income"]}\n\n" \
                 "y/n\n")
             
             if is_keep_cache.lower() == "y":
