@@ -21,13 +21,10 @@ def main():
                 _netincome_treasury = cache_data["net_income"]
             
             if is_keep_cache.lower() == "n":
-                return
+                _current_treasury, _desired_treasury, _netincome_treasury = get_user_inputs()
 
     except FileNotFoundError:
-        _current_treasury = input("What's your current treasury: ")
-        _desired_treasury = input("What's the amount of treasury you want to reach: ")
-        _netincome_treasury = input("What's your net income: ")
-
+        _current_treasury, _desired_treasury, _netincome_treasury = get_user_inputs()
         store_cache(_current_treasury, _desired_treasury, _netincome_treasury)
 
     _current_treasury = _current_treasury.replace(",", "")
@@ -65,7 +62,11 @@ def calc_turns_for_goal_treasury(desired_treasury: int, current_treasury: int, n
     return
 
 def get_user_inputs():
-    pass 
+    _current_treasury = input("What's your current treasury: ")
+    _desired_treasury = input("What's the amount of treasury you want to reach: ")
+    _netincome_treasury = input("What's your net income: ")
+
+    return _current_treasury, _desired_treasury, _netincome_treasury
 
 def store_cache(_current_treasury, _desired_treasury, _net_income):
     with open("cache.txt", "w") as cache:
